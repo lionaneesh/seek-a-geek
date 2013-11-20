@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<form method="POST" enctype="multipart/form-data">
+			Title: <input type="text" name="title" /> <br/>
+			Categories: <select name="category">
+			{% for cat in categories %}
+  				<option value="{{cat}}" name="{{cat}}">{{categories[cat]}}</option>
+  			{% endfor %}
+			</select><br/>
+			Description: <textarea type="text" name="description_student"></textarea>
+			<input type="submit">
+		</form>
+	</body>
+</html>

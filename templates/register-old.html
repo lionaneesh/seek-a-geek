@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<form method="POST">
+			Name: <input type="text" name="name" /> <br/>
+			Roll Number: <input type="number" name="roll" /> <br/>
+			Stream: <select name="stream">
+			{% for stream in streams %}
+  				<option value="{{stream}}" name="{{stream}}">{{streams[stream]}}</option>
+  			{% endfor %}
+			</select>
+			Skills: <input type="text" name="skills"> <br/>
+			Skills interested to learn: <input type="text" name="skills_to_learn"> <br />
+			profile photo : <input type="file" name="prof_photo">
+			website: <input type="text" name="website">
+			<input type="submit">
+		</form>
+	</body>
+</html>

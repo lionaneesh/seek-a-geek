@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face
+{
+font-family: chalk;
+src:url(/fonts/font.ttf);
+}
+
+a
+	{
+		color:inherit;
+		text-decoration:inherit;
+	}
+body
+	{
+		overflow-x:hidden;
+		font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+		background-color:#fff;
+	}
+#header
+	{
+		text-align:center;
+	}
+
+#menubar
+	{
+		list-style-type:none;
+		position:relative;
+		top:-40px;
+		left:0px;
+	}
+#menubar li
+	{
+		display:inline-block;
+		font-size:20px;
+		color:#063;
+		padding:50px;
+	}
+#menubar div
+	{
+		font-family:chalk;
+		color:#000;
+		position:relative;
+		left:-160px;
+		font-size:38px;
+	}
+#logo div span
+	{
+		font-size:40px;
+	}
+#menubar li:hover
+	{
+		color:#063;
+	}
+#belowHead
+	{
+		background-color:#063;
+		border-width:20px;
+		border-style:solid;
+		border-color:#630;
+		height:350px;
+		color:#FFF;
+		position:relative;
+		width:95%;
+		top:-80px;
+		font-size:40px;
+		font-family:chalk;
+		border-radius:5px;
+		
+	}
+#belowHead p
+	{
+		position:relative;
+		top:95px;
+	}
+
+#upText
+	{
+		color:#333;
+		font-size:40px;
+		position:relative;
+		left:-30%;
+		top:-30px;
+	}
+#upClassesCont tr td
+	{
+		background-color:#fff;
+		width:300px;
+		font-family:chalk;
+		color:#333;
+		/*box-shadow:#CCC 0px 8px 20px;*/
+		border: solid #999 2px;
+		border-radius:200px;
+		padding:30px;
+		letter-spacing:1px;
+		line-height:30px;
+		text-align:center;
+		font-size:24px;
+	}
+#upClassesCont tr td span
+	{
+		font-weight:bold;
+	}
+#classHead
+	{
+		font-size:24px;
+		font-family:Segoe, "Segoe UI light", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+	}
+#viewD
+	{
+		font-family:Segoe, "Segoe UI light", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	}
+
+
+#footer {
+	font-family: Segoe, "Segoe UI light", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	background: #333;
+	width: 102%;
+	height: 10em;
+	margin-left: -1em;
+	margin-top: 6em;
+}
+
+#footer p {
+	color: #CCC;
+	text-align: center;
+	letter-spacing: .8px;
+	position: relative;
+	top: 2em;
+	font-size: 18px;
+}
+
+#footer p span {
+	color: #396;
+	font-weight:bold;
+}

@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face
+{
+font-family: chalk;
+src:url(/fonts/font.ttf);
+}
+
+a
+	{
+		color:inherit;
+		text-decoration:inherit;
+	}
+body
+	{
+		overflow-x:hidden;
+		font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+		background-color:#396;
+		height:1000px;
+	}
+#header
+	{
+		text-align:center;
+		background-color:#396;
+		color:#FFF;
+		position:relative;
+		top:-20px;
+	}
+
+#menubar
+	{
+		list-style-type:none;
+		position:relative;
+		top:-40px;
+		left:0px;
+	}
+#menubar li
+	{
+		display:inline-block;
+		font-size:20px;
+		color:#fff;
+		padding:70px 50px 0px 50px;
+	}
+#menubar div
+	{
+		font-family:chalk;
+		color:#fff;
+		position:relative;
+		left:-180px;
+		font-size:38px;
+	}
+#logo div span
+	{
+		font-size:40px;
+	}
+#menubar li:hover
+	{
+		color:#fff;
+	}
+	
+#container
+	{
+		width:80%;
+		background-color:#FFF;
+	}
+#topic
+	{
+		color:#333;
+		font-size:40px;
+		position:relative;
+		left:-30%;
+		padding-top:80px;
+	}
+table
+	{
+		margin-top:50px;
+	}
+td
+	{
+		padding:10px;
+	}
+	
+#students
+	{
+		list-style-type:none;
+		width:60%;
+		padding-bottom:30px;
+	}
+#students li
+	{
+		text-align:center;
+		display:inline-block;
+		font-size:18px;
+		padding:20px;
+		width:160px;
+		background-color:#EBEBEB;
+	}
+#students li img
+	{
+		width:150px;
+		height:160px;
+	}
+#studentsHead
+	{
+		position:relative;
+		font-size:40px;
+		color:#333;
+		left:-20%;
+	}
+#students li:hover
+	{
+		background-color:#F63;
+		color:#FFF;
+	}
+	
+#attend a,#teach a
+	{
+		color:#F63;
+		font-weight:bold;
+	}
+	
+#footer {
+	font-family: Segoe, "Segoe UI light", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	background: #333;
+	width: 102%;
+	height: 10em;
+	margin-left: -1em;
+	margin-top: 6em;
+}
+
+#footer p {
+	color: #CCC;
+	text-align: center;
+	letter-spacing: .8px;
+	position: relative;
+	top: 2em;
+	font-size: 18px;
+}
+
+#footer p span {
+	color: #396;
+	font-weight:bold;
+}

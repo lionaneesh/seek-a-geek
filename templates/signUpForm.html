@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+function submitForm()
+	{
+		document.getElementById("form1").submit();
+	}
+</script>
+<link href="assets/css/designSignUpForm.css" rel="stylesheet" type="text/css">
+<title>Seek A Geek | Sign Up</title>
+</head>
+<body>
+<div id="header">
+	<ul id="menubar">
+    	<li><div>Seek <span>A</span> Geek</div></li>
+    	<li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Sign In</a></li>
+    </ul>
+</div>
+
+<div align="center">
+<div id="formCont">
+<p id="signUp">
+Sign Up
+</p>
+
+<form id="form1" method="POST">
+<table>
+	<tr>
+    	<td>Name:</td>
+        <td><input name="name" type="text"></td>
+    </tr>
+	<tr>
+    	<td>IIITD Roll Number:</td>
+        <td><input name="roll" type="number"></td>
+    </tr>
+	<tr>
+    	<td>Stream:</td>
+        <td>
+        	<select name="stream" size="3">
+            {% for stream in streams %}
+  				<option value="{{stream}}" name="{{stream}}">{{streams[stream]}}</option>
+  			{% endfor %}
+        	</select>
+        </td>
+    </tr>
+	<tr>
+    	<td>My Skills:<br><span>(Comma Separated eg. css/python/django)</span></td>
+        <td><input type="text" name="skills"></td>
+    </tr>
+	<tr>
+    	<td>I want to learn:<br><span>(Comma Separated eg. css/python/django)</span></td>
+        <td><input type="text" name="skills_to_learn"></td>
+    </tr>
+	<tr>
+    	<td>Display Picture:</td>
+        <td><input type="file" name="prof_photo"></td>
+    </tr>
+	<tr>
+    	<td>Blog:</td>
+        <td><input type="url" name="website"></td>
+    </tr>
+</table>
+
+<p id="submit" onClick="submitForm()">
+<a href="#">
+Submit
+</a>
+</p>
+</form>
+
+</div>
+</div>
+</body>
+</html>

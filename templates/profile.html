@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/assets/css/profileDesign.css" rel="stylesheet" type="text/css">
+<title>{{user.name}} | Profile</title>
+</head>
+
+<body>
+<div id="header">
+	<ul id="menubar">
+    	<li><div>Seek <span>A</span> Geek</div></li>
+        {% if user %}
+            <li><a href="/home">Home</a></li>
+        {% endif %}
+        <li><a href="/requested_classes">Requested Classes</a></li>
+        <li><a href="/about">About</a></li>
+        {% if not user %}
+        <li><a href="/sign_in">Sign In</a></li>
+        {% endif %}
+        {% if user %}
+        <li><a href="{{logout_link}}">Sign Out</a></li>
+        {% endif %}
+    </ul>
+    </ul>
+</div>
+
+<div align="center">
+<div id="container">
+<p id="profHead">
+{{user.name}}'s Profile
+</p>
+<table>
+<tr><td><img src="/img?img_id={{user.key()}}">
+</td></tr>
+<tr><td><b>IIITD Roll Number:</b></td><td>{{user.roll_number}}</td></tr>
+<tr><td><b>Skills:</b></td><td>{{user.skills|join(", ")}}</td></tr>
+<tr><td><b>Stream:</b></td><td>{{user.stream}}</td></tr>
+<tr><td><b>Interested in learning:</b></td><td>{{user.skills_to_learn|join(", ")}}</td></tr>
+<tr><td><b>Website:</b></td><td><a href="{{user.website}}">{{user.website}}</a></td></tr>
+</table>
+</div>
+</div>
+
+</body>
+</html>

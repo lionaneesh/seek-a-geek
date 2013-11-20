@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/assets/css/teachClassForm.css" rel="stylesheet" type="text/css">
+<title>Fill up class details</title>
+<script type="text/javascript">
+function submitForm()
+	{
+		document.getElementById("form1").submit();
+	}
+</script>
+</head>
+
+<body>
+<div id="header">
+	<ul id="menubar">
+        <li><div>Seek <span>A</span> Geek</div></li>
+        {% if user %}
+            <li><a href="/home">Home</a></li>
+        {% endif %}
+        <li><a href="/requested_classes">Requested Classes</a></li>
+        <li><a href="/about">About</a></li>
+        {% if not user %}
+        <li><a href="/sign_in">Sign In</a></li>
+        {% endif %}
+        {% if user %}
+        <li><a href="{{logout_link}}">Sign Out</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+<div align="center">
+<div id="formCont">
+<p id="signUp">
+Please fill up the class details
+</p>
+
+<form id="form1" method="POST">
+<table>
+	<tr>
+    	<td>Topic:</td>
+        <td>{{topic.title}}</td>
+    </tr>
+	<tr>
+    	<td>Description:</td>
+        <td>{{topic.description_student}}</td>
+    </tr>
+	
+	<tr>
+    	<td>Notes from you:<br><span>(This should include pre-requisites, any pre reading material etc.)</span></td>
+        <td><textarea cols="20" rows="4" name="teacher_description"></textarea></td>
+    </tr>
+	<tr>
+    	<td>Date:</td>
+        <td><input type="date" name="date"></td>
+    </tr>
+	<tr>
+    	<td>Time:</td>
+        <td><input type="time" name="time"></td>
+    </tr>
+	<tr>
+    	<td>Location:</td>
+        <td><input type="text" name="location"></td>
+    </tr>
+</table>
+
+<p id="submit" onClick="submitForm()">
+<a href="#">
+Create Class
+</a>
+</p>
+</form>
+
+</div>
+</div>
+
+
+</body>
+</html>

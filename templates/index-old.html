@@ -1,0 +1,14 @@
+<html>
+<body>
+		{% for data in recent %}
+		<h1>{{data.title}}</h1>
+		<h1>{{data.location}}</h1>
+		<ul>
+			{% for stud in data.list_of_students %}
+				<a href="/user/{{stud.key()}}"><li>{{stud.name}}</li></a>
+			{% endfor %}
+		</ul>
+		<hr/>
+		{% endfor %}
+	</body>
+</html>

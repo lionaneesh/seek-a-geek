@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/assets/css/newsFeedDesign.css" rel="stylesheet" type="text/css">
+<title>{{user.name}} | Home</title>
+</head>
+<body>
+<div id="header">
+    <ul id="menubar">
+        <li><div>Seek <span>A</span> Geek</div></li>
+        {% if user %}
+            <li><a href="/home">Home</a></li>
+        {% endif %}
+        <li><a href="/requested_classes">Requested Classes</a></li>
+        <li><a href="/about">About</a></li>
+        {% if not user %}
+        <li><a href="/sign_in">Sign In</a></li>
+        {% endif %}
+        {% if user %}
+        <li><a href="{{logout_link}}">Sign Out</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+
+<div id="containsAll">
+<ul id="navBar">
+    <li>
+        <img id="proPic" src="/img?img_id={{user.key()}}">
+    </li>
+    <li id="profLink">
+    <a href="/user/{{user.key()}}">Profile</a>
+    </li>
+    <li id="allClassLink">
+    <a href="/upcoming_classes">All Classes</a>
+    </li>
+    <li id="reqLink">
+    <a href="/add_class">Request A Class</a>
+    </li>
+</ul>
+
+<div id="rightSide">
+<p id="upcomingClasses">
+Your upcoming classes
+</p>
+
+<ul id="upComingClassesList">
+    {% for data in upcoming_courses_user_is_student_of %}
+                    <a href="/class/{{data.key()}}">
+<li>
+                <b id="classHead">{{data.title}}</b><br><br>
+                Location: <span>{{data.location}}</span><br>
+                Time: <span>{{data.when.strftime("%H:%M")}} hrs</span><br>
+                Date: <span>{{data.when.strftime("%d %B, %Y")}}</span><br><br/>
+            </li></a>
+    {% endfor %}
+</ul>
+
+<p id="upcomingClassesByYou">
+Upcoming classes by you
+</p>
+
+<ul id="upComingByYouList">
+        {% for data in upcoming_courses_user_is_teacher_of %}
+                    <a href="/class/{{data.key()}}">
+<li>
+                <b id="classHead">{{data.title}}</b><br><br>
+                Location: <span>{{data.location}}</span><br>
+                Time: <span>{{data.when.strftime("%H:%M")}} hrs</span><br>
+                Date: <span>{{data.when.strftime("%d %B, %Y")}}</span><br><br/>
+            </li></a>
+        {% endfor %}</ul>
+</div>
+
+</div>
+
+
+<div id="footer">
+<p>
+This was made by <span>Tushar</span> Gupta, <span>Aneesh</span> Dogra & <span>Manav</span> Batra for the <span>Byld Hackathon</span><br><br>Seek <span>A</span> Geek
+</p>
+</div>
+</body>
+</html>

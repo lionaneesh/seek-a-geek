@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Class | {{topic.title}}</title>
+<link href="/assets/css/classDesign.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="header">
+	<ul id="menubar">
+    	<li><div>Seek <span>A</span> Geek</div></li>
+        {% if user %}
+            <li><a href="/home">Home</a></li>
+        {% endif %}
+        <li><a href="/requested_classes">Requested Classes</a></li>
+        <li><a href="/about">About</a></li>
+        {% if not user %}
+        <li><a href="/sign_in">Sign In</a></li>
+        {% endif %}
+        {% if user %}
+        <li><a href="{{logout_link}}">Sign Out</a></li>
+        {% endif %}
+    </ul>
+    </ul>
+</div>
+
+<div align="center">
+<div id="container">
+<p id="topic">
+{{topic.title}}
+</p>
+<table>
+<tr>
+	<td><b>Taught By:</b>
+    </td>
+    <td>
+                {% for stud in topic.list_of_teachers %}
+                                <a href="/user/{{stud.key()}}">{{stud.name}}</a><br/>
+                    {% endfor %}    </td>
+</tr>
+<tr>
+    <td><b>Notes from mentor:</b></td>
+    <td>{{topic.description_teacher}}</td>
+</tr>
+<tr>
+	<td><b>Class Details</b>
+    </td>
+</tr>
+<tr>
+	<td>Location:
+    </td>
+    <td>{{topic.location}}
+    </td>
+</tr>
+<tr>
+    <td>Description</td>
+    <td>{{topic.description_teacher}}</td>
+</tr>
+
+<tr><td>Time:</td> <td>{{topic.when.strftime("%H:%M")}} hrs</td></tr>
+<tr><td>Date:</td> <td>{{topic.when.strftime("%d %B, %Y")}}</td></tr>
+<tr>
+<td id="attend">
+<a href="/attend_that/{{topic.key()}}">Attend Class</a>
+</td>
+<td id="teach">
+<a href="/mentor_that/{{topic.key()}}">Teach Class</a>
+</td>
+</tr>
+</table>
+
+
+<ul id="students">
+    {% for stud in topic.list_of_students %}
+	   <a href="/user/{{stud.key()}}"><li><img src="/img?img_id={{stud.key()}}"><br>{{stud.name}}</li></a>
+    {% endfor %}
+</ul>
+
+</div>
+</div>
+<div id="footer">
+<p>
+This was made by <span>Tushar</span> Gupta, <span>Aneesh</span> Dogra & <span>Manav</span> Batra for the <span>Byld Hackathon</span><br><br>Seek <span>A</span> Geek
+</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Seek A Geek | All Classes</title>
+<link href="/assets/css/allClassesDesign.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="header">
+    <ul id="menubar">
+        <li><div>Seek <span>A</span> Geek</div></li>
+        {% if user %}
+            <li><a href="/home">Home</a></li>
+        {% endif %}
+        <li><a href="/upcoming_classes">Upcoming Classes</a></li>
+        <li><a href="/about">About</a></li>
+        {% if not user %}
+        <li><a href="/sign_in">Sign In</a></li>
+        {% endif %}
+        {% if user %}
+        <li><a href="{{logout_link}}">Sign Out</a></li>
+        {% endif %}
+    </ul>
+</div>
+<hr>
+
+<div align="center">
+<div id="container">
+<p id="upcomingClasses">
+All Upcoming Classes
+</p>
+
+<ul id="upComingClassesList">
+     {% for data in classes %}
+            <a href="/class/{{data.key()}}">
+            <li>
+                <b id="classHead">{{data.title}}</b><br><br>
+                Taught by: 
+                    {% for stud in data.list_of_teachers %}
+                                {{stud.name}}<br/>
+                    {% endfor %}
+                Location: <span>{{data.location}}</span><br>
+                Time: <span>{{data.when.strftime("%H:%M")}} hrs</span><br>
+                Date: <span>{{data.when.strftime("%d %B, %Y")}}</span><br><br/>
+            </li>
+        </a>
+    {% endfor %}
+</ul>
+</div>
+</div>
+<div id="footer">
+<p>
+This was made by <span>Tushar</span> Gupta, <span>Aneesh</span> Dogra & <span>Manav</span> Batra for the <span>Byld Hackathon</span><br><br>Seek <span>A</span> Geek
+</p>
+</div>
+</body>
+</html>

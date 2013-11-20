@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/assets/css/teachClassForm.css" rel="stylesheet" type="text/css">
+<title>Fill up class details</title>
+<script type="text/javascript">
+function submitForm()
+    {
+        document.getElementById("form1").submit();
+    }
+</script>
+</head>
+
+<body>
+<div id="header">
+	<ul id="menubar">
+    	<li><div>Seek <span>A</span> Geek</div></li>
+        {% if user %}
+            <li><a href="/home">Home</a></li>
+        {% endif %}
+        <li><a href="/requested_classes">Requested Classes</a></li>
+        <li><a href="/about">About</a></li>
+        {% if not user %}
+        <li><a href="/sign_in">Sign In</a></li>
+        {% endif %}
+        {% if user %}
+        <li><a href="{{logout_link}}">Sign Out</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+<div align="center">
+<div id="formCont">
+<p id="signUp">
+Please fill up the class details
+</p>
+
+<form id="form1" method="POST">
+<table>
+	<tr>
+    	<td>Title:</td>
+        <td><input type="text" name="title"></td>
+    </tr>
+	
+    <tr>
+    <td>Category: </td><td><select name="category">
+            {% for cat in categories %}
+                <option value="{{cat}}" name="{{cat}}">{{categories[cat]}}</option>
+            {% endfor %}
+            </select></td>
+    </tr>
+
+	<tr>
+    	<td>Description:<br><span>(Short description of the topic)</span></td>
+        <td><textarea cols="20" rows="4" name="description_student"></textarea></td>
+    </tr>
+    <tr>
+</table>
+
+<a href="#"><p id="submit" onClick="submitForm()"></a>
+Create Class
+</p>
+</form>
+
+</div>
+</div>
+
+</body>
+</html>
